@@ -146,6 +146,7 @@ router.get('/buscarnoticias/:value', function (req, res) {
 
 router.get('/buscarnoticia/:value', function (req, res) {
     var value = req.params.value;
+    var noticias =[];
     console.log("Buscar noticia usuario: "+ value);
     var query = post.findOne({'_id': value});
     query.exec(function (err, noticia) {
@@ -153,7 +154,8 @@ router.get('/buscarnoticia/:value', function (req, res) {
             console.log(err);
             return res.send(400);
         }
-
+        noticia.numero_clicks = noticia.numero_clicks+1;
+        noticia.save();
         return res.json(200, noticia);
     });
 
@@ -225,6 +227,17 @@ router.get('/naogosteinoticia/:value', function (req, res) {
 
 });
 
+router.get('/carreganoticias', function (req, res) {
+    console.log("Carregar noticias");
+    res.render('usuario/noticias',{layout: false});
+
+});
+
+router.get('/carreganoticia', function (req, res) {
+    console.log("Carrega noticia");
+    res.render('usuario/noticia',{layout: false});
+
+});
 
 
 

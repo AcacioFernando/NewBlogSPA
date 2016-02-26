@@ -7,6 +7,9 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http) {
     $scope.comentarios =[];
     $scope.criterioDeBusca ="";
 
+    $scope.templateUrl =  '/carreganoticias';
+
+
     var carregarNoticias = function () {
         $http.get("/noticias").success(function (data) {
             console.log(data);
@@ -49,11 +52,12 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http) {
     };
 
     $scope.buscarNoticia = function (idNoticia) {
+        $scope.templateUrl =  '/carreganoticia';
 
         $http.get("/buscarnoticia/"+idNoticia).success(function (data) {
-            console.log(data);
+
             $scope.noticias = data;
-            $scope.categorias = data.comments;
+            $scope.comentarios = data.comments;
             $scope.noticiasBanner = [];
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
