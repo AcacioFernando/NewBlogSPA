@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views','usuario','javascripts')));
 
 
 //Rotas
@@ -46,6 +47,13 @@ app.use('/ngostei', routes);
 app.use('/admin', admin);
 app.use('/comentario', comentario);
 app.use('/admin/post', post);
+app.get('/views/noticia', function(req, res) {
+   res.render('usuario/noticia');
+});
+app.get('/views/index', function(req, res) {
+    res.render('usuario/index');
+});
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

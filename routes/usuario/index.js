@@ -16,67 +16,20 @@ router.get('/', function (req, res) {
     var usuario_logado = req.session.logged;
     console.log(usuario_logado);
     var result;
-    try {
-        async.parallel([
-                // Find all notícias
-                function (callback) {
-                    var query = post.find().limit(5);
-                    query.exec(function (err, noticias) {
-                        if (err) {
-                            callback(err);
-                        }
 
-                        callback(null, noticias);
-                    });
-                },
+    res.render('usuario/layout', {usuario: usuario_logado});
+});
 
-                //Find all categorias
-                function (callback) {
-                    var query = categoria.find();
-                    query.exec(function (err, categoria) {
-                        if (err) {
-                            callback(err);
-                        }
+router.get('/noticia/:id', function (req, res, next) {
 
-                        callback(null, categoria);
-                    });
-                },
+    console.log("Click Noticia");
+    var usuario_logado = req.session.logged;
 
-                //Find all mais lidos
-                function (callback) {
-                    var query = post.find().sort({numero_clicks: -1}).limit(5);
-                    query.exec(function (err, noticiasMaisLidas) {
-                        if (err) {
-                            callback(err);
-                        }
-                        callback(null, noticiasMaisLidas);
-                    });
-                }
-            ],
+    var posts = [];
+    var maisLidas = null;
+    var id = req.params.id;
 
-            //Compute all results
-            function (err, results) {
-                if (err) {
-                    console.log(err);
-                    return null;
-                }
-
-                if (results == null || results[0] == null) {
-                    return null;
-                }
-
-                res.render('usuario/index', {
-                    title: 'Hero',
-                    noticias: results[0],
-                    categorias: results[1],
-                    maisLidas: results[2],
-                    usuario: usuario_logado
-                });
-            });
-    } catch (err) {
-        console.log("Falha ao abrir : " + err);
-        res.redirect('/usuario/error');
-    }
+    res.render("usuario/layout", {usuario: usuario_logado});
 
 });
 
@@ -126,11 +79,11 @@ router.get('/buscarnoticias/:value', function (req, res) {
     console.log("Pesquisar noticias: ");
     var value = req.params.value;
 
-    var query ="";
-    if(value== "undefined" || value ==""){
+    var query = "";
+    if (value == "undefined" || value == "") {
         query = post.find().limit(5);
-    }else{
-         query = post.find({content: new RegExp(value)}).limit(5);
+    } else {
+        query = post.find({content: new RegExp(value)}).limit(5);
     }
 
     query.exec(function (err, noticias) {
@@ -146,15 +99,15 @@ router.get('/buscarnoticias/:value', function (req, res) {
 
 router.get('/buscarnoticia/:value', function (req, res) {
     var value = req.params.value;
-    var noticias =[];
-    console.log("Buscar noticia usuario: "+ value);
+    var noticias = [];
+    console.log("Buscar noticia usuario: " + value);
     var query = post.findOne({'_id': value});
     query.exec(function (err, noticia) {
         if (err) {
             console.log(err);
             return res.send(400);
         }
-        noticia.numero_clicks = noticia.numero_clicks+1;
+        noticia.numero_clicks = noticia.numero_clicks + 1;
         noticia.save();
         return res.json(200, noticia);
     });
@@ -167,11 +120,11 @@ router.get('/buscarcategoria/:value', function (req, res) {
     console.log("Pesquisar categorias: ");
     var value = req.params.value;
 
-    var query ="";
-    if(value== "undefined" || value ==""){
+    var query = "";
+    if (value == "undefined" || value == "") {
         query = post.find().limit(5);
-    }else{
-        query =  post.find({category: value}).limit(5);
+    } else {
+        query = post.find({category: value}).limit(5);
     }
 
     query.exec(function (err, noticias) {
@@ -190,7 +143,7 @@ router.get('/gosteinoticia/:value', function (req, res) {
     console.log("Gostei Noticia: ");
     var value = req.params.value;
 
-    var query =  post.findOne({_id: value});
+    var query = post.findOne({_id: value});
 
     query.exec(function (err, noticia) {
         if (err) {
@@ -198,7 +151,7 @@ router.get('/gosteinoticia/:value', function (req, res) {
             return res.send(400);
         }
 
-        noticia.gostei = noticia.gostei +1;
+        noticia.gostei = noticia.gostei + 1;
         noticia.save();
 
         return res.json(200);
@@ -211,7 +164,7 @@ router.get('/naogosteinoticia/:value', function (req, res) {
     console.log("Não gostei noticia: ");
     var value = req.params.value;
 
-    var query =  post.findOne({_id: value});
+    var query = post.findOne({_id: value});
 
     query.exec(function (err, noticia) {
         if (err) {
@@ -219,7 +172,7 @@ router.get('/naogosteinoticia/:value', function (req, res) {
             return res.send(400);
         }
 
-        noticia.nao_gostei = noticia.nao_gostei +1;
+        noticia.nao_gostei = noticia.nao_gostei + 1;
         noticia.save();
 
         return res.json(200);
@@ -229,103 +182,20 @@ router.get('/naogosteinoticia/:value', function (req, res) {
 
 router.get('/carreganoticias', function (req, res) {
     console.log("Carregar noticias");
-    res.render('usuario/noticias',{layout: false});
+    res.render('usuario/noticias', {layout: false});
 
 });
 
 router.get('/carreganoticia', function (req, res) {
     console.log("Carrega noticia");
-    res.render('usuario/noticia',{layout: false});
+    res.render('usuario/noticia', {layout: false});
 
 });
-
 
 
 /* GET noticia*/
 
-router.get('/noticia/:id', function (req, res, next) {
 
-    console.log("Click Noticia");
-    var usuario_logado = req.session.logged;
-
-    var posts = [];
-    var maisLidas = null;
-    var id = req.params.id;
-
-    try {
-
-        async.parallel([
-                // Find all notícias
-                function (callback) {
-                    var query = post.findOne({'_id': id});
-                    query.exec(function (err, noticia) {
-                        if (err) {
-                            callback(err);
-                        }
-
-                        //Atualiza numero de clicks
-                        noticia.numero_clicks = noticia.numero_clicks + 1;
-                        console.log(noticia.numero_clicks);
-                        noticia.save();
-
-                        callback(null, noticia);
-                    });
-                },
-
-                //Find all categorias
-                function (callback) {
-                    var query = categoria.find();
-                    query.exec(function (err, categoria) {
-                        if (err) {
-                            callback(err);
-                        }
-
-                        callback(null, categoria);
-                    });
-                },
-
-                //Find all mais lidos
-                function (callback) {
-                    var query = post.find().sort({numero_clicks: -1}).limit(5);
-                    query.exec(function (err, noticiasMaisLidas) {
-                        if (err) {
-                            callback(err);
-                        }
-                        callback(null, noticiasMaisLidas);
-                    });
-                }
-            ],
-
-            //Compute all results
-            function (err, results) {
-                if (err) {
-                    console.log(err);
-                    console.log("Notifica nao encontrada");
-                    res.redirect('/');
-                }
-
-                if (results == null || results[0] == null) {
-                    console.log("Notifica nao encontrada");
-                    res.redirect('/');
-                }
-
-                posts.push(results[0]);
-
-                res.render('usuario/noticia', {
-                    title: 'Hero',
-                    noticias: posts,
-                    categorias: results[1],
-                    maisLidas: results[2],
-                    usuario: usuario_logado
-                });
-            });
-
-    } catch (err) {
-        console.log("Falha ao buscar: " + err);
-        res.redirect('/');
-    }
-
-});
 
 router.get('/gostei/:id', function (req, res) {
 
