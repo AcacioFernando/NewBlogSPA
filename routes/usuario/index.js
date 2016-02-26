@@ -80,6 +80,154 @@ router.get('/', function (req, res) {
 
 });
 
+/* GET chamadas assincronas */
+router.get('/noticias', function (req, res) {
+    console.log("Busca noticias usuario");
+
+    var query = post.find().limit(5);
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        return res.json(200, noticias);
+    });
+
+
+});
+
+router.get('/noticiasmaislidas', function (req, res) {
+    console.log("Busca noticias mais lidas usuario");
+    var query = post.find().sort({numero_clicks: -1}).limit(5);
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, noticias);
+    });
+});
+
+router.get('/buscarcategorias', function (req, res) {
+    console.log("Busca categoria mais lidas usuario");
+    var query = categoria.find();
+    query.exec(function (err, categorias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, categorias);
+    });
+});
+
+router.get('/buscarnoticias/:value', function (req, res) {
+
+    console.log("Pesquisar noticias: ");
+    var value = req.params.value;
+
+    var query ="";
+    if(value== "undefined" || value ==""){
+        query = post.find().limit(5);
+    }else{
+         query = post.find({content: new RegExp(value)}).limit(5);
+    }
+
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, noticias);
+    });
+
+
+});
+
+router.get('/buscarnoticia/:value', function (req, res) {
+    var value = req.params.value;
+    console.log("Buscar noticia usuario: "+ value);
+    var query = post.findOne({'_id': value});
+    query.exec(function (err, noticia) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        return res.json(200, noticia);
+    });
+
+
+});
+
+router.get('/buscarcategoria/:value', function (req, res) {
+
+    console.log("Pesquisar categorias: ");
+    var value = req.params.value;
+
+    var query ="";
+    if(value== "undefined" || value ==""){
+        query = post.find().limit(5);
+    }else{
+        query =  post.find({category: value}).limit(5);
+    }
+
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, noticias);
+    });
+
+
+});
+
+router.get('/gosteinoticia/:value', function (req, res) {
+
+    console.log("Gostei Noticia: ");
+    var value = req.params.value;
+
+    var query =  post.findOne({_id: value});
+
+    query.exec(function (err, noticia) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        noticia.gostei = noticia.gostei +1;
+        noticia.save();
+
+        return res.json(200);
+    });
+
+});
+
+router.get('/naogosteinoticia/:value', function (req, res) {
+
+    console.log("Não gostei noticia: ");
+    var value = req.params.value;
+
+    var query =  post.findOne({_id: value});
+
+    query.exec(function (err, noticia) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        noticia.nao_gostei = noticia.nao_gostei +1;
+        noticia.save();
+
+        return res.json(200);
+    });
+
+});
+
+
+
+
 /* GET noticia*/
 
 router.get('/noticia/:id', function (req, res, next) {
@@ -465,51 +613,51 @@ router.post('/search', function (req, res) {
         res.redirect('/usuario/error');
     }
 
-/*
+    /*
 
 
-    var query_maisLidas = post.find().sort({numero_clicks: -1}).limit(5);
+     var query_maisLidas = post.find().sort({numero_clicks: -1}).limit(5);
 
-    post.find({content: new RegExp(srch)}, function (err, noticias) {
-        if (err) {
-            console.log("Erro busca :" + noticias);
-            return console.error(err);
-        } else if (noticias.length != []) {
+     post.find({content: new RegExp(srch)}, function (err, noticias) {
+     if (err) {
+     console.log("Erro busca :" + noticias);
+     return console.error(err);
+     } else if (noticias.length != []) {
 
-            console.log("Tudo certo" + noticias);
+     console.log("Tudo certo" + noticias);
 
-            query_maisLidas.exec(function (err, maisLidasNoticias) {
-                if (err) {
-                    console.error("Error query maisLidos find: " + err);
-                    res.redirect('usuario/error');
-                } else {
-                    res.render('usuario/index', {
-                        title: 'Hero',
-                        noticias: noticias,
-                        maisLidas: maisLidasNoticias,
-                        usuario: usuario_logado
-                    });
-                }
-            });
-        } else {
+     query_maisLidas.exec(function (err, maisLidasNoticias) {
+     if (err) {
+     console.error("Error query maisLidos find: " + err);
+     res.redirect('usuario/error');
+     } else {
+     res.render('usuario/index', {
+     title: 'Hero',
+     noticias: noticias,
+     maisLidas: maisLidasNoticias,
+     usuario: usuario_logado
+     });
+     }
+     });
+     } else {
 
-            console.log("Vazio: " + noticias);
+     console.log("Vazio: " + noticias);
 
-            query_maisLidas.exec(function (err, maisLidasNoticias) {
-                if (err) {
-                    console.error("Error query maisLidos find: " + err);
-                    res.redirect('usuario/error');
-                } else {
-                    res.render('usuario/index', {
-                        title: 'Hero',
-                        noticias: null,
-                        maisLidas: maisLidasNoticias,
-                        usuario: usuario_logado
-                    });
-                }
-            });
-        }
-    });*/
+     query_maisLidas.exec(function (err, maisLidasNoticias) {
+     if (err) {
+     console.error("Error query maisLidos find: " + err);
+     res.redirect('usuario/error');
+     } else {
+     res.render('usuario/index', {
+     title: 'Hero',
+     noticias: null,
+     maisLidas: maisLidasNoticias,
+     usuario: usuario_logado
+     });
+     }
+     });
+     }
+     });*/
 
 });
 

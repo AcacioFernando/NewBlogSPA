@@ -1,3 +1,4 @@
+<!--Cabecalho -->
 <div class="top-header">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -28,11 +29,12 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <% if(categorias != null){ %>
-                                <% categorias.forEach(function(categoria){ %>
 
-                                    <li><a href='/categoria/<%= categoria.nome_categoria%>'><%= categoria.nome_categoria%></a></li>
-                                <% })} %>
+
+                                <li ng-repeat="categoria in categorias">
+                                    <a ng-click= "buscarCategoria(categoria.nome_categoria)">{{categoria.nome_categoria}}</a>
+                                </li>
+
 
                             </ul>
                         </li>
@@ -40,11 +42,13 @@
 
                     </ul>
                     <div class="search">
-                        <form method="post" action="/search">
-                            <input name="search_noticia" id="search_noticia" type="search" value="Search"
+                        <form>
+                            <input ng-model="criterioDeBusca" name="search_noticia" id="search_noticia" type="search"
+                                   value="Search"
                                    onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"
                                    required="">
-                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            <button ng-click="buscarNoticias(criterioDeBusca)" type="submit" class="btn btn-default"
+                                    aria-label="Left Align">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </button>
 
@@ -67,7 +71,6 @@
     </div>
 </div>
 
-</head>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">

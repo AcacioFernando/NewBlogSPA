@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var db = require('./db');
 
 var routes = require('./routes/usuario/index');
-var users = require('./routes/auxiliar/users');
 var admin = require('./routes/admin/index');
 var comentario = require('./routes/usuario/index');
 var post = require('./routes/admin/post');
@@ -44,7 +43,6 @@ app.use('/', routes);
 app.use('/noticia', routes);
 app.use('/gostei', routes);
 app.use('/ngostei', routes);
-app.use('/users', users);
 app.use('/admin', admin);
 app.use('/comentario', comentario);
 app.use('/admin/post', post);
