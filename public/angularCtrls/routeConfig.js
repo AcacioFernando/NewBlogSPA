@@ -7,7 +7,6 @@ angular.module("myApp").config(function ($routeProvider, $locationProvider) {
                 templateUrl: '/views/noticias',
                 controller: 'noticiasCtrl'
             })
-
             // route for the about page
             .when('/noticia/:value', {
                 templateUrl: '/views/noticia',
@@ -18,6 +17,15 @@ angular.module("myApp").config(function ($routeProvider, $locationProvider) {
             .when('/categoria/:value', {
                 templateUrl: '/views/categoria',
                 controller: 'categoriaCtrl'
+            })
+
+            .when('/search/:value', {
+                templateUrl: '/views/categoria',
+                controller: 'searchCtrl'
+            })
+            .when('/admin', {
+                templateUrl: '/admin',
+                controller: 'timeLineCtrl'
             });
 
         $locationProvider.html5Mode({

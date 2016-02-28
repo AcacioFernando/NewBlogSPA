@@ -1,4 +1,4 @@
-angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
+angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$location) {
     $scope.app = "Lista Telefonica";
     $scope.noticias = [];
     $scope.noticiasMaisLidas = [];
@@ -6,6 +6,18 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
     $scope.categorias =[];
     $scope.comentarios =[];
     $scope.criterioDeBusca ="";
+    $scope.usuario = "";
+
+    var carregarUsuario = function () {
+        $http.get("/buscarusuario").success(function (data) {
+            console.log("Entrei aqui 1: " +data);
+            $scope.usuario = data;
+            console.log($scope.usuario);
+        }).error(function (data, status) {
+            console.log(usuario);
+            $scope.message = "Aconteceu um problema: " + data;
+        });
+    };
 
     var carregarNoticias = function () {
         $http.get("/buscarnoticias").success(function (data) {
@@ -19,7 +31,6 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
         $http.get("/noticiasmaislidas").success(function (data) {
             $scope.noticiasMaisLidas = data;
             $scope.noticiasBanner = data.slice(-3);
-            console.log($scope.noticiasBanner);
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });
@@ -27,7 +38,6 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
 
     var carregarCategorias= function () {
         $http.get("/buscarcategorias").success(function (data) {
-            console.log(data);
             $scope.categorias = data;
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
@@ -35,21 +45,12 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
     };
 
     $scope.buscarNoticias = function (criterioDeBusca) {
-        $http.get("/buscarnoticias/"+criterioDeBusca).success(function (data) {
-            console.log(data);
-            $scope.noticias = data;
-            $scope.noticiasBanner = data.slice(-3);
-        }).error(function (data, status) {
-            $scope.message = "Aconteceu um problema: " + data;
-        });
-
+        console.log(criterioDeBusca);
+        $location.url('/search/'+criterioDeBusca);
     };
 
     $scope.buscarNoticia = function (idNoticia) {
-        $scope.templateUrl =  '/carreganoticia';
-
         $http.get("/buscarnoticia/"+idNoticia).success(function (data) {
-
             $scope.noticias = data;
             $scope.comentarios = data.comments;
             $scope.noticiasBanner = [];
@@ -61,7 +62,6 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
 
     $scope.buscarCategoria = function (categoria) {
         $http.get("/buscarcategoria/"+categoria).success(function (data) {
-            console.log(data);
             $scope.noticias = data;
             $scope.noticiasBanner = data.slice(-3);
         }).error(function (data, status) {
@@ -70,9 +70,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
     };
     
     $scope.gosteiNoticia= function (idNoticia) {
-        console.log("id: "+ idNoticia);
         var noticias = $scope.noticias;
-
         $http.get("/gosteinoticia/"+idNoticia).success(function () {
 
             $scope.noticias = noticias.filter(function (noticia) {
@@ -88,7 +86,6 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
     };
 
     $scope.naoGosteiNoticia= function (idNoticia) {
-        console.log("id: "+ idNoticia);
         var noticias = $scope.noticias;
 
         $http.get("/naogosteinoticia/"+idNoticia).success(function () {
@@ -108,5 +105,6 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http) {
     carregarCategorias();
     carregarNoticiasMaisLidas();
     carregarNoticias();
+    carregarUsuario();
 
 });

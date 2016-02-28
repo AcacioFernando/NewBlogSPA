@@ -13,6 +13,7 @@ var dateFormat = require('dateformat');
 router.get('/', function (req, res) {
     console.log("Index usuario");
     var usuario_logado = req.session.logged;
+    console.log(usuario_logado);
     res.render('usuario/index', {usuario: usuario_logado});
 });
 
@@ -33,6 +34,14 @@ router.get('/categoria/:id', function (req, res, next) {
 
 });
 
+router.get('/search/:id', function (req, res, next) {
+
+    console.log("Click search");
+    var usuario_logado = req.session.logged;
+
+    res.render("usuario/index", {usuario: usuario_logado});
+
+});
 
 /* GET chamadas assincronas */
 
@@ -49,6 +58,14 @@ router.get('/buscarnoticias', function (req, res) {
         return res.json(200, noticias);
     });
 
+
+});
+
+router.get('/buscarusuario', function (req, res) {
+    console.log("Buscar  usuario");
+
+    var usuario_logado = req.session.logged;
+    return res.json(200, usuario_logado);
 
 });
 
@@ -76,7 +93,7 @@ router.get('/buscarcategorias', function (req, res) {
     });
 });
 
-router.get('/buscarnoticias/:value', function (req, res) {
+router.get('/buscarpesquisa/:value', function (req, res) {
 
     console.log("Pesquisar noticias: ");
     var value = req.params.value;
@@ -190,25 +207,54 @@ router.get('/naogosteinoticia/:value', function (req, res) {
 
 });
 
-router.get('/carreganoticias', function (req, res) {
-    console.log("Carregar noticias");
-    res.render('usuario/noticias', {layout: false});
-
-});
-
-router.get('/carreganoticia', function (req, res) {
-    console.log("Carrega noticia");
-    res.render('usuario/noticia', {layout: false});
-
-});
-
 
 /* Post chamdas assincronas*/
 
-router.post('/submitcomentario', function(req, res) {
+router.post('/submitcomentario/:value', function (req, res) {
     console.log("Entrei aqui");
-    console.log(req.body.comentario);
-    res.end();
+
+    var value = req.params.value;
+    var query = post.findOne({_id: value});
+
+    var comentario = req.body.comment;
+    console.log(comentario);
+    var user = req.body.nome;
+    console.log(user);
+
+    var time = new Date();
+    time = dateFormat(time, "yyyy-mm-dd h:MM:ss");
+
+    try {
+        post.findOne({'_id': value}, function (err, noticia) {
+            if (noticia) {
+
+                var comments = {
+                    postid: value,
+                    name: user,
+                    comment: comentario,
+                    date: time
+                };
+                noticia.comments.push(comments);
+                noticia.save(function (err) {
+                    if (err) {
+                        console.log('Falha ao salvar comentário: ' + err);
+                        return res.json(400, noticia.comments);
+                    }
+                    else {
+                        console.log('success');
+                        res.json(200, noticia.comments);
+                    }
+                });
+            } else {
+                console.log("Falha ao buscar noticia: " + err);
+                return res.send(400);
+            }
+        });
+
+    } catch (err) {
+        console.log("Falha ao buscar: " + err);
+        return res.send(400);
+    }
 });
 
 

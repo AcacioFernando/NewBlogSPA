@@ -1,17 +1,18 @@
-angular.module("myApp").controller("noticiaCtrl", function ($scope, $http) {
-    $scope.app = "Lista Telefonica";
+angular.module("myApp").controller("timeLineCtrl", function ($scope, $http) {
+
     $scope.noticias = [];
-    $scope.operadoras = [];
+    $scope.usuario = "";
+
 
     var carregarNoticias = function () {
-        $http.get("/noticias").success(function (data) {
-            console.log(data);
+        console.log("Entrei aqui ");
+        $http.get("/admin/buscarnoticias").success(function (data) {
             $scope.noticias = data;
-
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });
     };
+
 
     carregarNoticias();
 

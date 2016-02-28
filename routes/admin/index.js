@@ -9,6 +9,38 @@ var post = mongoose.model('post');
 var dateFormat = require('dateformat');
 
 
+
+/* GET Admin Page */
+
+router.get('/admin', function (req, res) {
+
+    var usuario_logado = req.session.logged;
+    console.log("Usuario logado " + req.session.logged);
+
+    console.log(usuario_logado);
+    res.render('admin/index', {usuario: usuario_logado});
+
+});
+
+
+/* GET chamadas assincronas */
+
+router.get('/admin/buscarnoticias', function (req, res) {
+    console.log("Busca noticias admin");
+
+    var query = post.find().limit(10);
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        return res.json(200, noticias);
+    });
+
+
+});
+
 /* GET users listing. */
 router.get('/', function (req, res) {
     console.log("Index admin");
@@ -139,4 +171,5 @@ router.get('/logout', function (req, res) {
     req.session.logged = null;
     res.redirect('/');
 });
+
 module.exports = router;

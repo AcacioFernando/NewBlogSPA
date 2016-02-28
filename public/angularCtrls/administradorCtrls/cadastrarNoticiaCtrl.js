@@ -18,14 +18,14 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
 
     $scope.submitComentario = function () {
         console.log($scope.comentario);
-        $http.post('/submitcomentario', $scope.comentario).success(function (data) {
+        $http.post('/submitcomentario/'+ $scope.noticia._id, $scope.comentario).success(function (data) {
             console.log("posted successfully");
+            $scope.comentarios = data;
         }).error(function (data) {
             console.error("error in posting");
         });
 
     };
-
 
     $scope.gosteiNoticia = function (idNoticia) {
         console.log("id: " + idNoticia);
