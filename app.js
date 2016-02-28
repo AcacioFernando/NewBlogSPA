@@ -9,9 +9,9 @@ var bodyParser = require('body-parser');
 var db = require('./db');
 
 var routes = require('./routes/usuario/index');
-var admin = require('./routes/admin/index');
+/*var admin = require('./routes/admin/index');
 var comentario = require('./routes/usuario/index');
-var post = require('./routes/admin/post');
+var post = require('./routes/admin/post');*/
 
 
 var app = express();
@@ -41,17 +41,21 @@ app.use(express.static(path.join(__dirname, 'views','usuario','javascripts')));
 //Rotas
 
 app.use('/', routes);
-app.use('/noticia', routes);
-app.use('/gostei', routes);
+
+/*app.use('/gostei', routes);
 app.use('/ngostei', routes);
 app.use('/admin', admin);
 app.use('/comentario', comentario);
-app.use('/admin/post', post);
+app.use('/admin/post', post);*/
+
 app.get('/views/noticia', function(req, res) {
    res.render('usuario/noticia');
 });
-app.get('/views/index', function(req, res) {
-    res.render('usuario/index');
+app.get('/views/noticias', function(req, res) {
+    res.render('usuario/noticias');
+});
+app.get('/views/categoria', function(req, res) {
+    res.render('usuario/categoria');
 });
 
 

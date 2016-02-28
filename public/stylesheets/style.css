@@ -334,7 +334,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 /*--content--*/
 .banner{
-  margin-top:2em;
+  margin-bottom: 2em;
 }
 .content{
   margin-top:2em;
@@ -2728,5 +2728,10 @@ padding-bottom: 10px;
   width: 100% \9;
   max-width: 100%;
   height: auto;
+}
+
+.conteudo{
+  margin-top: 10px;
+
 }
 

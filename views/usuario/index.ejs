@@ -1,87 +1,30 @@
-<!-- Conteúdo do Blog -->
+<!DOCTYPE html>
+<html ng-app="myApp" lang="pt">
+<head>
+    <title>hhh</title>
+    <% include ./templates/head.ejs %>
+</head>
 
+<body ng-controller="noticiasCtrl">
 
-<!-- Inicio Lista de Notícias -->
-<div class="sec_1" ng-repeat="noticia in noticias">
-    <div class="sec_1 grids">
-        <div class="post6">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src='http://res.cloudinary.com/hlrpvlno9/image/upload/v1446942169/{{noticia.img}}'
-                         class="img-responsive post6-pic-img" alt="">
-                </div>
+<% include ./templates/header.ejs %>
 
-                <div class=" col-md-6 post6-pic-info">
+<!-- Insert Body here -->
+<div class="conteudo">
 
-                    <div class="info-box bg-yellow">
-                        <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{noticia.category}}</span>
-                        </div><!-- /.info-box-content -->
-                    </div>
+    <div class="container">
 
-                    <h3><a href="#/noticia/{{noticia._id}}">{{noticia.title}}</a></h3>
-                    <p>{{noticia.sub_title}}</p>
-                    <div class="comments cmnt3">
-                        <ul>
-                            <li><a href ng-click="gosteiNoticia(noticia._id)"> <span
-                                            class="gostei glyphicon glyphicon-thumbs-up"
-                                            aria-hidden="true"></span>{{noticia.gostei}}
-                                </a>
-                            </li>
-                            <li><a href ng-click="naoGosteiNoticia(noticia._id)"><span
-                                            class="gostei glyphicon glyphicon-thumbs-down"
-                                            aria-hidden="true"></span>{{noticia.nao_gostei}}
-                                </a>
-                            </li>
-                            <li><a href="#"><span class="glyphicon glyphicon-comment"
-                                                  aria-hidden="true"></span>{{noticia.comments.length}}
-                                </a>
-                            </li>
-                            <li><span class="glyphicon glyphicon-eye-open"
-                                      aria-hidden="true"></span> {{noticia.numero_clicks}}
-                            </li>
-                            <li><span class="glyphicon glyphicon-time"
-                                      aria-hidden="true"></span>{{noticia.date}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-        <br/>
+        <div ng-view></div>
+
+        <% include ./menulateral.ejs %>
+
     </div>
 </div>
-<!-- Fim Lista de Notícias -->
 
 
-<!-- Inicio Lista de Noticias Vazio  -->
-<div class="sec_1" ng-show="noticias.length <= 0">
-    <div class="sec_1 grids">
-        <div class="post6">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="/images/img-not-found.png" class="img-responsive post6-pic-img" alt="">
-                </div>
+</div><!-- /.container -->
 
-                <div class="col-md-6 post6-pic-info post6-pic-vazio">
+<% include ./templates/footer.ejs %>
 
-                    <h1>Sua busca não retornou resultados</h1>
-                    <div class="bnr-info">
-                        <a href="/">Limpar pesquisa</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-        <br/>
-    </div>
-</div>
-<!-- Fim Post 1 -->
-
-
-<!-- Fim Conteúdo do Blog -->
+</body>
+</html>

@@ -1,1 +1,218 @@
-Estou aqui
+<!-- Conteúdo do Blog -->
+
+<div class="content-left">
+
+<!-- Inicio Lista de Notícias -->
+<div class="sec_1">
+    <div class="sec_1 grids">
+        <div class="post6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="post6-pic-noticia">
+
+                        <div class="info-box bg-yellow">
+                            <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">{{noticia.category}}</span>
+                            </div><!-- /.info-box-content -->
+                        </div>
+
+                        <h3><a href="#">{{noticia.title}}</a></h3>
+
+                        <p>{{noticia.sub_title}}</p>
+                    </div>
+
+                    <img src="{{noticia.img}}"
+                         class="img-responsive post6-pic-img" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-12">
+
+                    <div class="comments cmnt3">
+                        <ul>
+                            <li><a href ng-click="gosteiNoticia(noticia._id)"> <span
+                                            class="gostei glyphicon glyphicon-thumbs-up"
+                                            aria-hidden="true"></span>{{noticia.gostei}}
+                                </a>
+                            </li>
+                            <li><a href ng-click="naoGosteiNoticia(noticia._id)"><span
+                                            class="gostei glyphicon glyphicon-thumbs-down"
+                                            aria-hidden="true"></span>{{noticia.nao_gostei}}
+                                </a>
+                            </li>
+                            <li><a href="#"><span class="glyphicon glyphicon-comment"
+                                                  aria-hidden="true"></span>{{noticia.comments.length}}
+                                </a>
+                            </li>
+                            <li><span class="glyphicon glyphicon-eye-open"
+                                      aria-hidden="true"></span> {{noticia.numero_clicks}}
+                            </li>
+                            <li><span class="glyphicon glyphicon-time"
+                                      aria-hidden="true"></span>{{noticia.date}}
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" col-md-12">
+                    <div id="noticiaConteudo" class="conteudo_noticia">
+
+                        <div ng-bind-html="conteudo"></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="post6-comentarios">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="page-header">Comentários</h2>
+                        <section class="comment-list">
+
+
+                            <div ng-repeat="comentario in comentarios">
+                                <!-- First Comment -->
+                                <article class="row" ng-show="$index % 2 != 0">
+                                    <div class="col-md-2 col-sm-2 hidden-xs">
+                                        <figure class="thumbnail">
+                                            <img class="img-responsive"
+                                                 src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"/>
+                                            <figcaption class="text-center">{{comentario.name}}</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-10 col-sm-10">
+                                        <div class="panel panel-default arrow left">
+                                            <div class="panel-body">
+                                                <header class="text-left">
+                                                    <div class="comment-user"><i class="fa fa-user"></i>
+                                                        {{comentario.name}}
+                                                    </div>
+                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i
+                                                                class="fa fa-clock-o"></i>{{comentario.date}}
+                                                    </time>
+                                                </header>
+                                                <div class="comment-post">
+                                                    <p>
+                                                        {{comentario.comment}}
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Second Comment -->
+                                <article class="row" ng-show="$index %2 == 0">
+                                    <div class="col-md-10 col-sm-10">
+                                        <div class="panel panel-default arrow right">
+                                            <div class="panel-body">
+                                                <header class="text-right">
+                                                    <div class="comment-user"><i class="fa fa-user"></i>
+                                                        {{comentario.name}}
+                                                    </div>
+                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i
+                                                                class="fa fa-clock-o"></i> {{comentario.date}}
+                                                    </time>
+                                                </header>
+                                                <div class="comment-post">
+                                                    <p>
+                                                        {{comentario.comment}}
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 hidden-xs">
+                                        <figure class="thumbnail">
+                                            <img class="img-responsive"
+                                                 src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"/>
+                                            <figcaption class="text-center">{{comentario.name}}</figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                            <!-- Comments Form -->
+                            <div class="well">
+                                <h3>
+                                    <icon class=" balao-comentario glyphicon glyphicon-comment"></icon>
+                                    Deixe seu comentário:
+                                </h3>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-12 form-group">
+                                            <input ng-model="comentario.nome" name="userComentario" id="userComentario"
+                                                   placeholder="Digite seu nome" type="text"
+                                                   class="form-control">
+                                        </div>
+
+                                        <div class="col-md-12 form-group">
+                                                        <textarea ng-model="comentario.comment" name="textComentario" id="textComentario"
+                                                                  placeholder="Participe da discurssão..."
+                                                                  class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <button ng-click="submitComentario(comentario)" class="btn btn-primary">
+                                        <icon class="glyphicon glyphicon-envelope"></icon>
+                                        Enviar
+                                    </button>
+                                </form>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+    </div>
+</div>
+<!-- Fim Lista de Notícias -->
+
+
+<!-- Inicio Lista de Noticias Vazio  -->
+<div class="sec_1" ng-show="noticia == false">
+    <div class="sec_1 grids">
+        <div class="post6">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/img-not-found.png" class="img-responsive post6-pic-img" alt="">
+                </div>
+
+                <div class="col-md-6 post6-pic-info post6-pic-vazio">
+
+                    <h1>Sua busca não retornou resultados</h1>
+                    <div class="bnr-info">
+                        <a href="/">Limpar pesquisa</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+    </div>
+</div>
+<!-- Fim Post 1 -->
+
+</div>
+<!-- Fim Conteúdo do Blog -->
+
+<!----->
+
+
+
