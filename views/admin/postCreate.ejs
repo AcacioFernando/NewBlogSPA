@@ -1,6 +1,3 @@
-<% layout('layout') -%>
-
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,14 +29,14 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="labelTitulo">Título</label>
-                                <input type="text" class="form-control" id="inputTitulo" name="inputTitulo"
+                                <input ng-model="noticia.title" type="text" class="form-control" id="inputTitulo" name="inputTitulo"
                                        placeholder="Entre com o título da notícia">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="labelSubTitulo">Subtítulo</label>
-                                        <input type="text" class="form-control" id="inputSubTitulo"
+                                        <input ng-model="noticia.sub_title" type="text" class="form-control" id="inputSubTitulo"
                                                name="inputSubTitulo"
                                                placeholder="Entre com o subtítulo da notícia">
                                     </div>
@@ -47,13 +44,8 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Categoria</label>
-                                        <select id="inputCategoria" name="inputCategoria" class="form-control select2"
-                                                style="width: 100%;">
-
-                                            <% if(categorias != null){%>
-                                            <% categorias.forEach(function(categoria){ %>
-                                            <option> <%= categoria.nome_categoria %></option>
-                                            <% })} %>
+                                        <select class="form-control select2" ng-model="noticia.category" ng-options="categoria.nome_categoria for categoria in categorias">
+                                            <option value="">Selecione uma categoria</option>
                                         </select>
 
                                     </div><!-- /.form-group -->
@@ -164,7 +156,7 @@
 <script src="https://cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
 <script src="/javascripts/ckeditor.js"></script>
 
-<script>
+<!--<script>
     initSample();
 
     function submitForm() {
@@ -180,4 +172,4 @@
         }
     }
 
-</script>
+</script>-->

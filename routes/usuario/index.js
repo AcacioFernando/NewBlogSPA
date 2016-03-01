@@ -207,7 +207,21 @@ router.get('/naogosteinoticia/:value', function (req, res) {
 
 });
 
+router.get('/buscarnoticiasdeletar', function (req, res) {
+    console.log("Busca noticias usuario");
 
+    var query = post.find();
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        return res.json(200, noticias);
+    });
+
+
+});
 /* Post chamdas assincronas*/
 
 router.post('/submitcomentario/:value', function (req, res) {

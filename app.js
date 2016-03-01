@@ -38,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'views','usuario','javascripts')));
 //Rotas
 
 app.use('/', routes);
+app.use('/admin', admin);
 
 app.get('/views/noticia', function(req, res) {
    res.render('usuario/noticia');
@@ -51,9 +52,15 @@ app.get('/views/categoria', function(req, res) {
 app.get('/views/search', function(req, res) {
     res.render('usuario/categoria');
 });
-app.get('/admin', function(req, res) {
+app.get('/views/admin', function(req, res) {
     res.render('admin/index');
 });
+app.get('/views/cadastarnoticia', function(req, res) {
+    res.render('admin/postCreate');
+});
+app.get('/views/deletarnoticia', function(req, res) {
+    res.render('admin/postDelete');
+})
 
 
 // catch 404 and forward to error handler

@@ -9,19 +9,35 @@ var post = mongoose.model('post');
 var dateFormat = require('dateformat');
 
 
-
 /* GET Admin Page */
 
-router.get('/admin', function (req, res) {
-
+router.get('/', function (req, res) {
+    console.log("/admin ");
     var usuario_logado = req.session.logged;
     console.log("Usuario logado " + req.session.logged);
 
     console.log(usuario_logado);
-    res.render('admin/index', {usuario: usuario_logado});
+    res.render('admin/layout', {usuario: usuario_logado});
 
 });
 
+router.get('/cadastrarnoticia',function (req, res) {
+    console.log("/cadastrarnoticia ");
+    var usuario_logado = req.session.logged;
+    console.log("Usuario logado " + req.session.logged);
+    console.log(usuario_logado);
+    res.render('admin/layout', {usuario: usuario_logado});
+
+});
+
+router.get('/deletarnoticia',function (req, res) {
+    console.log("/Deletar noticia ");
+    var usuario_logado = req.session.logged;
+    console.log("Usuario logado " + req.session.logged);
+    console.log(usuario_logado);
+    res.render('admin/layout', {usuario: usuario_logado});
+
+});
 
 /* GET chamadas assincronas */
 
@@ -40,6 +56,31 @@ router.get('/admin/buscarnoticias', function (req, res) {
 
 
 });
+
+router.get('/admin/buscarcategoria', function (req, res) {
+    console.log("Busca categoria admin");
+    var query = categoria.find();
+    query.exec(function (err, categorias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, categorias);
+    });
+});
+
+router.get('/admin/buscarnoticiasdeletar', function (req, res) {
+    console.log("Busca noticias deletar admin");
+    var query = post.find();
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+        return res.json(200, noticias);
+    });
+});
+
 
 /* GET users listing. */
 router.get('/', function (req, res) {
@@ -121,7 +162,6 @@ router.post('/registrar', function (req, res) {
     }
 
 });
-
 
 router.post('/login', function (req, res) {
     sess = req.session;

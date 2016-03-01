@@ -24,8 +24,16 @@ angular.module("myApp").config(function ($routeProvider, $locationProvider) {
                 controller: 'searchCtrl'
             })
             .when('/admin', {
-                templateUrl: '/admin',
-                controller: 'timeLineCtrl'
+                templateUrl: '/views/admin',
+                controller: 'indexCtrl'
+            })
+            .when('/admin/deletarnoticia', {
+                templateUrl: '/views/deletarnoticia',
+                controller: 'deletarNoticiaCtrl'
+            })
+            .when('/admin/cadastrarnoticia', {
+                templateUrl: '/views/cadastarnoticia',
+                controller: 'cadastrarNoticiaCtrl'
             });
 
         $locationProvider.html5Mode({

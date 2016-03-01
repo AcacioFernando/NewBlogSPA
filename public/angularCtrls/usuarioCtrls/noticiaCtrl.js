@@ -1,9 +1,10 @@
-angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $routeParams) {
+angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $routeParams, $sce ) {
     $scope.app = "Lista Telefonica";
     $scope.noticia;
     $scope.comentarios = [];
     $scope.conteudo = "";
     $scope.comentario = {};
+
 
     var carregarNoticias = function () {
 
@@ -16,6 +17,11 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
         });
     };
 
+    $scope.to_trusted = function(html_code) {
+        console.log($sce.trustAsHtml(html_code));
+        return $sce.trustAsHtml(html_code);
+    }
+
     $scope.submitComentario = function () {
         console.log($scope.comentario);
         $http.post('/submitcomentario/'+ $scope.noticia._id, $scope.comentario).success(function (data) {
@@ -26,6 +32,7 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
         });
 
     };
+
 
     $scope.gosteiNoticia = function (idNoticia) {
         console.log("id: " + idNoticia);
