@@ -41,7 +41,7 @@ router.get('/deletarnoticia',function (req, res) {
 
 /* GET chamadas assincronas */
 
-router.get('/admin/buscarnoticias', function (req, res) {
+router.get('/index/buscarnoticias', function (req, res) {
     console.log("Busca noticias admin");
 
     var query = post.find().limit(10);
@@ -57,7 +57,7 @@ router.get('/admin/buscarnoticias', function (req, res) {
 
 });
 
-router.get('/admin/buscarcategoria', function (req, res) {
+router.get('/cadastrar/buscarcategorias', function (req, res) {
     console.log("Busca categoria admin");
     var query = categoria.find();
     query.exec(function (err, categorias) {
@@ -69,7 +69,7 @@ router.get('/admin/buscarcategoria', function (req, res) {
     });
 });
 
-router.get('/admin/buscarnoticiasdeletar', function (req, res) {
+router.get('/deletarnoticia/buscarnoticiasdeletar', function (req, res) {
     console.log("Busca noticias deletar admin");
     var query = post.find();
     query.exec(function (err, noticias) {
@@ -81,6 +81,33 @@ router.get('/admin/buscarnoticiasdeletar', function (req, res) {
     });
 });
 
+router.get('/deletarnoticia/buscarnoticiadeletar/:value', function (req, res) {
+    console.log("Busca noticias deletar admin");
+    var value = req.params.value;
+
+    try {
+        var query = post.findOne({'_id': value});
+        query.exec(function (err, noticia) {
+            if (err) {
+                console.log(err);
+                return res.send(400);
+            }
+            var imgagem = noticia.img.replace("http://res.cloudinary.com/hlrpvlno9/image/upload/v1446942169/", "");
+            console.log(imgagem);
+            cloudinary.api.delete_resources_by_tag(imgagem,
+                function (result) {
+                    console.log(result);
+                    noticia.remove();
+                    console.log('removed');
+                    return res.json(200);
+                });
+
+
+        });
+    } catch (err) {
+        return res.send(400);
+    }
+});
 
 /* GET users listing. */
 router.get('/', function (req, res) {

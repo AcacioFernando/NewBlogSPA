@@ -1,12 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var async = require('async');
+
 /*  Banco de dados*/
 var mongoose = require('mongoose');
 var post = mongoose.model('post');
 var categoria = mongoose.model('categoria');
+
 /* Format data*/
 var dateFormat = require('dateformat');
+
+/*  Banco de dados */
+var cloudinary = require('cloudinary');
+cloudinary.config({
+    cloud_name: 'hlrpvlno9',
+    api_key: '233981594891625',
+    api_secret: '95VDJfIMfT_10QuSBvqkoAl24xc'
+});
+
 
 
 /* GET home page. */
@@ -271,6 +281,53 @@ router.post('/submitcomentario/:value', function (req, res) {
     }
 });
 
+
+
+
+/* Mudar para admim */
+router.get('/deletarnoticia/buscarnoticiadeletar/:value', function (req, res) {
+    console.log("Busca noticias deletar usuario");
+    var value = req.params.value;
+
+    try {
+        var query = post.findOne({'_id': value});
+        query.exec(function (err, noticia) {
+            if (err) {
+                console.log(err);
+                return res.send(400);
+            }
+            var imgagem = noticia.img.replace("http://res.cloudinary.com/hlrpvlno9/image/upload/v1446942169/", "");
+            console.log(imgagem);
+            cloudinary.api.delete_resources_by_tag(imgagem,
+                function (result) {
+                    console.log(result);
+                    noticia.remove();
+                    console.log('removed');
+                    return res.json(200);
+                });
+
+
+        });
+    } catch (err) {
+        return res.send(400);
+    }
+});
+
+router.get('/admin/buscarnoticiasdeletar', function (req, res) {
+    console.log("Busca noticias usuario");
+
+    var query = post.find().limit(10);
+    query.exec(function (err, noticias) {
+        if (err) {
+            console.log(err);
+            return res.send(400);
+        }
+
+        return res.json(200, noticias);
+    });
+
+
+});
 
 /*
  router.get('/gostei/:id', function (req, res) {
