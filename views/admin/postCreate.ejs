@@ -29,14 +29,16 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="labelTitulo">Título</label>
-                                <input ng-model="noticia.title" type="text" class="form-control" id="inputTitulo" name="inputTitulo"
+                                <input ng-model="noticia.title" type="text" class="form-control" id="inputTitulo"
+                                       name="inputTitulo"
                                        placeholder="Entre com o título da notícia">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="labelSubTitulo">Subtítulo</label>
-                                        <input ng-model="noticia.sub_title" type="text" class="form-control" id="inputSubTitulo"
+                                        <input ng-model="noticia.sub_title" type="text" class="form-control"
+                                               id="inputSubTitulo"
                                                name="inputSubTitulo"
                                                placeholder="Entre com o subtítulo da notícia">
                                     </div>
@@ -44,7 +46,8 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Categoria</label>
-                                        <select class="form-control select2" ng-model="noticia.category" ng-options="categoria.nome_categoria for categoria in categorias">
+                                        <select class="form-control select2" ng-model="noticia.category"
+                                                ng-options="categoria.nome_categoria for categoria in categorias">
                                             <option value="">Selecione uma categoria</option>
                                         </select>
 
@@ -85,9 +88,11 @@
                                     </div><!-- /.box-header -->
                                     <div class="box-body pad">
 
-                                    <textarea id="editor" name="editor" rows="10" cols="80" onchange="teste();">
-                                        Entre com a notícia ...
-                                    </textarea>
+                                        <form name="testForm">
+                                            {{testForm.body.$pristine}}
+                                            {{test}}
+                                            <textarea name="body" ckeditor="editorOptions" ng-model="test"></textarea>
+                                        </form>
 
                                     </div>
                                 </div><!-- /.box -->
@@ -152,24 +157,23 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
-<!-- CK Editor -->
-<script src="https://cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
-<script src="/javascripts/ckeditor.js"></script>
 
-<!--<script>
-    initSample();
 
-    function submitForm() {
-        var value = CKEDITOR.instances['editor'].getData();
-        document.getElementById("inputPost").value = value;
-        document.novaNoticia.submit();
-    }
-    function teste() {
-        var value = CKEDITOR.instances['editor'].getData();
+<button ng-click="save()">Save</button>
 
-        function onChangeTest(textbox) {
-            alert("Value is " + textbox.value + "\n" + "Old Value is " + textbox.oldvalue);
-        }
-    }
-
-</script>-->
+<!--    <script>
+        var app = angular.module('myApp', ['ngCkeditor']).
+        controller('DemoCtrl', function($scope, $http) {
+            $scope.editorOptions = {
+                language: 'ru'
+                // uiColor: '#000000'
+            };
+            $scope.save = function() {
+                $http.post('/examples/test.php', {
+                    content: $scope.test
+                }).success(function() {
+                    alert('Saved');
+                });
+            }
+        })
+    </script>-->

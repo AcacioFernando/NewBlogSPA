@@ -1,7 +1,10 @@
 angular.module("myApp").controller("cadastrarNoticiaCtrl", function ($scope, $http, $routeParams) {
     $scope.app = "Lista Telefonica";
     $scope.categorias =[];
-
+    $scope.editorOptions = {
+        language: 'pt'
+        // uiColor: '#000000'
+    };
     var carregarCategorias= function () {
         console.log("Entrei cadastar noticias")
         $http.get("/buscarcategorias").success(function (data) {
@@ -12,5 +15,12 @@ angular.module("myApp").controller("cadastrarNoticiaCtrl", function ($scope, $ht
         });
     };
 
+    $scope.save = function() {
+        $http.post('/examples/test.php', {
+            content: $scope.test
+        }).success(function() {
+            alert('Saved');
+        });
+    }
     carregarCategorias();
 });
