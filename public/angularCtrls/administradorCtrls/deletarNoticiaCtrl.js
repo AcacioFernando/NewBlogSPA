@@ -14,7 +14,7 @@ angular.module("myApp").controller("deletarNoticiaCtrl", function ($scope, $http
     $scope.deletarNoticia = function (value) {
         console.log("Entrei aqui noticias: " + value);
         var lstNoticia = $scope.noticias;
-        $http.get("/admin/deletarNoticia/" + value).success(function (data) {
+        $http.get("/deletarnoticia/buscarnoticiadeletar/" + value).success(function (data) {
 
             $scope.noticias = lstNoticia.filter(function (noticia) {
                 if (noticia._id != value) {

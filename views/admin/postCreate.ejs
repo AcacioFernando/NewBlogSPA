@@ -24,9 +24,10 @@
                         <h3 class="box-title">Cadastrar</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                    <form id="novaNoticia" name="novaNoticia" method="post" action="/admin/post/cadastrar_post"
-                          enctype="multipart/form-data">
-                        <div class="box-body">
+
+                    <div class="box-body">
+                        <form class="form-group" name="myForm" ng-controller="MyCtrl">
+
                             <div class="form-group">
                                 <label for="labelTitulo">Título</label>
                                 <input ng-model="noticia.title" type="text" class="form-control" id="inputTitulo"
@@ -88,46 +89,47 @@
                                     </div><!-- /.box-header -->
                                     <div class="box-body pad">
 
-                                        <form name="testForm">
-                                            {{testForm.body.$pristine}}
-                                            {{test}}
-                                            <textarea name="body" ckeditor="editorOptions" ng-model="test"></textarea>
-                                        </form>
+                                        {{testForm.body.$pristine}}
+                                    <textarea name="body" ckeditor="editorOptions"
+                                              ng-model="noticia.content"></textarea>
 
                                     </div>
                                 </div><!-- /.box -->
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputFile">Imagem</label>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group">
-                                        <div class="form-control uneditable-input" data-trigger="fileinput">
-                                            <i class="glyphicon glyphicon-file fileinput-exists"></i> <span
-                                                    class="fileinput-filename"></span>
-                                        </div>
-                                        <div class="input-group-btn">
-                                            <div class="btn btn-default btn-file">
-                                                <span class="fileinput-new">Select</span>
-                                                <span class="fileinput-exists">Change</span>
-                                                <input type="file" id="inputImagem" name="inputImagem"/>
-                                            </div>
-                                            <button type="button" class="btn btn-default fileinput-exists"
-                                                    data-dismiss="fileinput" title="remove">
-                                                Remove
-                                            </button>
+                            
+                            <fieldset>
+                                <div class="input-group">
+                                    <label for="exampleInputFile">Imagem</label>
+
+                                    <input type="file" ngf-select ng-model="picFile" name="file"
+                                           accept="image/*" ngf-max-size="2MB" required
+                                           ngf-model-invalid="errorFiles">
+                                    <div class="row">
+                                        <div class="col-md-12 ">
+                                            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile"
+                                                 class="img-responsive">
                                         </div>
                                     </div>
+                                    <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                                    <br>
+                                  <span class="progress" ng-show="picFile.progress >= 0">
+                                    <div style="width:{{picFile.progress}}%"
+                                         ng-bind="picFile.progress + '%'"></div>
+                                  </span>
+                                    <span ng-show="picFile.result">Upload Successful</span>
+                                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
                                 </div>
+                            </fieldset>
+                            <br>
+
+
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary" ng-click="uploadPic(picFile, noticia)">Submit
+                                </button>
                             </div>
-
-
-                        </div><!-- /.box-body -->
-
-                        <div class="box-footer">
-                            <button type="button" class="btn btn-primary" onclick="submitForm();">Submit</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div><!-- /.box-body -->
 
                 </div><!-- /.box -->
             </div><!--/.col -->
@@ -158,22 +160,3 @@
 </div><!-- /.content-wrapper -->
 
 
-
-<button ng-click="save()">Save</button>
-
-<!--    <script>
-        var app = angular.module('myApp', ['ngCkeditor']).
-        controller('DemoCtrl', function($scope, $http) {
-            $scope.editorOptions = {
-                language: 'ru'
-                // uiColor: '#000000'
-            };
-            $scope.save = function() {
-                $http.post('/examples/test.php', {
-                    content: $scope.test
-                }).success(function() {
-                    alert('Saved');
-                });
-            }
-        })
-    </script>-->
