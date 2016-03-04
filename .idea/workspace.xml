@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f61f218e-c25b-49a2-936e-9d86b3cfef35" name="Default" comment="ckeditor">
+    <list default="true" id="f61f218e-c25b-49a2-936e-9d86b3cfef35" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/cadastrarNoticiaCtrl.js" afterPath="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/cadastrarNoticiaCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/deletarNoticiaCtrl.js" afterPath="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/deletarNoticiaCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/api.js" afterPath="$PROJECT_DIR$/public/angularCtrls/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/usuario/index.js" afterPath="$PROJECT_DIR$/routes/usuario/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/postCreate.ejs" afterPath="$PROJECT_DIR$/views/admin/postCreate.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/templates/head.ejs" afterPath="$PROJECT_DIR$/views/admin/templates/head.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/usuario/templates/head.ejs" afterPath="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
     </list>
     <ignored path="NewBlogHTTP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postCreate.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="postCreate.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/postCreate.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7739837">
-              <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+            <state vertical-scroll-proportion="-4.018182">
+              <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#section#1;n#div#0;n#!!top" expanded="false" />
@@ -122,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/usuario/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.344828">
-              <caret line="420" column="0" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.675507">
+              <caret line="348" column="30" selection-start-line="348" selection-start-column="30" selection-end-line="348" selection-end-column="30" />
               <folding>
                 <element signature="e#601#776#0" expanded="false" />
                 <element signature="e#833#977#0" expanded="false" />
@@ -144,9 +138,7 @@
                 <element signature="e#5696#7019#0" expanded="false" />
                 <element signature="e#7125#7929#0" expanded="false" />
                 <element signature="e#7996#8268#0" expanded="false" />
-                <element signature="e#8363#10177#0" expanded="false" />
-                <element signature="e#10259#11061#0" expanded="false" />
-                <element signature="e#11065#17787#0" expanded="false" />
+                <element signature="e#11111#17833#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -244,9 +236,9 @@
         <option value="$PROJECT_DIR$/views/admin/templates/head.ejs" />
         <option value="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
         <option value="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/cadastrarNoticiaCtrl.js" />
-        <option value="$PROJECT_DIR$/routes/usuario/index.js" />
         <option value="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/deletarNoticiaCtrl.js" />
         <option value="$PROJECT_DIR$/views/admin/postCreate.ejs" />
+        <option value="$PROJECT_DIR$/routes/usuario/index.js" />
       </list>
     </option>
   </component>
@@ -678,7 +670,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457049019984</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Cadastrar noticias">
+      <created>1457057336352</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1457057336352</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -731,7 +729,8 @@
     <MESSAGE value="Inicio admin" />
     <MESSAGE value="Deletar funcionando" />
     <MESSAGE value="ckeditor" />
-    <option name="LAST_COMMIT_MESSAGE" value="ckeditor" />
+    <MESSAGE value="Cadastrar noticias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cadastrar noticias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,7 +742,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/usuario/index.js</url>
-          <line>596</line>
+          <line>597</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -773,7 +772,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/usuario/index.js</url>
-          <line>352</line>
+          <line>353</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
@@ -1127,10 +1126,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/postCreate.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.018182">
+          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#section#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usuario/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.344828">
-          <caret line="420" column="0" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.675507">
+          <caret line="348" column="30" selection-start-line="348" selection-start-column="30" selection-end-line="348" selection-end-column="30" />
           <folding>
             <element signature="e#601#776#0" expanded="false" />
             <element signature="e#833#977#0" expanded="false" />
@@ -1148,20 +1158,7 @@
             <element signature="e#5696#7019#0" expanded="false" />
             <element signature="e#7125#7929#0" expanded="false" />
             <element signature="e#7996#8268#0" expanded="false" />
-            <element signature="e#8363#10177#0" expanded="false" />
-            <element signature="e#10259#11061#0" expanded="false" />
-            <element signature="e#11065#17787#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/postCreate.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7739837">
-          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#section#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#11111#17833#0" expanded="false" />
           </folding>
         </state>
       </provider>

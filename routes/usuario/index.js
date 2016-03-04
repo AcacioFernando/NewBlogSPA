@@ -346,8 +346,9 @@ router.post('/cadastrarnoticia/uploadform', multipartMiddleware, function (req, 
         var image = req.files.file
             , image_upload_path_old = image.path
             , image_upload_name = image.name.split(' ').join('-')
-            , image_name_ext = dir + title_post + image_upload_name
-            , image_name = image_name_ext.replace(".jpg", "");
+            , image_name_ext = title_post + image_upload_name
+            , image_name = image_name_ext.replace(".jpg", "")
+            , image_name_ext = dir + image_name_ext;
         ;
 
         console.log(image_name);
