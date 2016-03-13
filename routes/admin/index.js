@@ -5,6 +5,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var usuarios = mongoose.model('usuario');
 var post = mongoose.model('post');
+var categoria = mongoose.model('categoria');
 /* Format data*/
 var dateFormat = require('dateformat');
 
@@ -57,7 +58,7 @@ router.get('/index/buscarnoticias', function (req, res) {
 
 });
 
-router.get('/cadastrar/buscarcategorias', function (req, res) {
+router.get('/buscarcategorias', function (req, res) {
     console.log("Busca categoria admin");
     var query = categoria.find();
     query.exec(function (err, categorias) {
@@ -69,7 +70,7 @@ router.get('/cadastrar/buscarcategorias', function (req, res) {
     });
 });
 
-router.get('/deletarnoticia/buscarnoticiasdeletar', function (req, res) {
+router.get('/buscarnoticiasdeletar', function (req, res) {
     console.log("Busca noticias deletar admin");
     var query = post.find();
     query.exec(function (err, noticias) {

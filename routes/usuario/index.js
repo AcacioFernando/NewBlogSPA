@@ -313,7 +313,7 @@ router.get('/deletarnoticia/buscarnoticiadeletar/:value', function (req, res) {
     }
 });
 
-router.get('/admin/buscarnoticiasdeletar', function (req, res) {
+router.get('/buscarnoticiasdeletar', function (req, res) {
     console.log("Busca noticias usuario");
 
     var query = post.find().limit(10);

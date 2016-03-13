@@ -9,7 +9,7 @@ angular.module("myApp").controller("cadastrarNoticiaCtrl", function ($scope, $ht
     $scope.test ="";*/
     var carregarCategorias= function () {
         console.log("Entrei cadastar noticias")
-        $http.get("/buscarcategorias").success(function (data) {
+        $http.get("/admin/buscarcategorias").success(function (data) {
             console.log(data);
             $scope.categorias = data;
         }).error(function (data, status) {
