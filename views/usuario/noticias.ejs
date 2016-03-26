@@ -4,83 +4,38 @@
 
     <div class="banner">
         <div class="slider">
-            <div class="callbacks_container">
-                <ul class="rslides" id="slider">
 
-                    <li>
-                        <div class="banner1"
-                             style="background: url({{noticiasBanner[0].img}}) no-repeat 0px 0px; ">
-                            <div class="banner-grids">
-                                <div class="banner-text">
+            <!-- Carousel
+        ================================================== -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" ng-repeat="noticia in noticiasBanner"
+                        ng-class="{active: ($index === 0)}" data-slide-to="{{$index}}"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div ng-repeat="noticia in noticiasBanner" ng-class="{item: true, active: ($index === 0)}" >
+                        <img src="{{noticia.img}}" style="width:100%" class="img-responsive">
+                        <div class="container">
+                            <div class="carousel-caption">
 
-                                    <div class="info-box-slide info-box bg-yellow">
-                                            <span class="info-box-icon"><i
-                                                        class="ion ion-ios-pricetag-outline"></i></span>
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">{{noticiasBanner[0].category}}</span>
-                                        </div><!-- /.info-box-content -->
-                                    </div>
-
-                                    <div class="bnr-info">
-                                        <h1>{{noticiasBanner[0].title}}</h1>
-                                        <p>{{noticiasBanner[0].sub_title}}</p>
-                                        <a href='/noticia/{{noticiasBanner[0]._id}}'>Leia mais</a>
-                                    </div>
+                                <div class="bnr-info">
+                                    <h1>{{noticia.title}}</h1>
+                                    <h3>{{noticia.sub_title}}</h3>
+                                    <a href='/noticia/{{noticia._id}}'>Leia mais</a>
+                                    <p></p>
                                 </div>
+
                             </div>
                         </div>
-                    </li>
+                    </div>
+                </div>
+                <a data-slide="prev" data-target="#myCarousel" class="left carousel-control">&lsaquo;<span
+                            class="glyphicon glyphicon-chevron-left"></span></a>
+                <a data-slide="next" data-target="#myCarousel" class="right carousel-control">&lsaquo;<span
+                            class="glyphicon glyphicon-chevron-right"></span></a>
+            </div><!-- /.carousel -->
 
-                    <li ng-show="noticiasBanner[1] != null">
-                        <div class="banner1"
-                             style="background: url({{noticiasBanner[1].img}}) no-repeat 0px 0px; ">
-                            <div class="banner-grids">
-                                <div class="banner-text">
-
-                                    <div class="info-box-slide info-box bg-yellow">
-                                            <span class="info-box-icon"><i
-                                                        class="ion ion-ios-pricetag-outline"></i></span>
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">{{noticiasBanner[1].category}}</span>
-                                        </div><!-- /.info-box-content -->
-                                    </div>
-
-                                    <div class="bnr-info">
-                                        <h1>{{noticiasBanner[1].title}}</h1>
-                                        <p>{{noticiasBanner[1].sub_title}}</p>
-                                        <a href='/noticia/{{noticiasBanner[1]._id}}'>Leia mais</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li ng-show="noticiasBanner[2] != null">
-                        <div class="banner1"
-                             style="background: url({{noticiasBanner[2].img}}) no-repeat 0px 0px; ">
-                            <div class="banner-grids">
-                                <div class="banner-text">
-
-                                    <div class="info-box-slide info-box bg-yellow">
-                                            <span class="info-box-icon"><i
-                                                        class="ion ion-ios-pricetag-outline"></i></span>
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">{{noticiasBanner[2].category}}</span>
-                                        </div><!-- /.info-box-content -->
-                                    </div>
-
-                                    <div class="bnr-info">
-                                        <h1>{{noticiasBanner[2].title}}</h1>
-                                        <p>{{noticiasBanner[2].sub_title}}</p>
-                                        <a href='/noticia/{{noticiasBanner[2]._id}}'>Leia mais</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
         </div>
         <!----->
     </div>
@@ -175,16 +130,3 @@
 
 </div>
 
-
-<script>
-    $(function () {
-        $("#slider").responsiveSlides({
-            auto: false,
-            nav: true,
-            speed: 500,
-            namespace: "callbacks",
-            pager: true,
-        });
-    });
-
-</script>
