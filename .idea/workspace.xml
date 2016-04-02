@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f61f218e-c25b-49a2-936e-9d86b3cfef35" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/usuario/index.ejs" afterPath="$PROJECT_DIR$/views/usuario/index.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/api.js" afterPath="$PROJECT_DIR$/public/angularCtrls/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/usuario/templates/head.ejs" afterPath="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
     </list>
     <ignored path="NewBlogHTTP.iws" />
@@ -55,21 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="head.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8540773">
-              <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+            <state vertical-scroll-proportion="-18.384615">
+              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.7034483">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -168,8 +168,8 @@
         <option value="$PROJECT_DIR$/public/angularCtrls/diretivas/angular-performance.js" />
         <option value="$PROJECT_DIR$/public/javascripts/angular-performance.min.js" />
         <option value="$PROJECT_DIR$/views/usuario/index.ejs" />
-        <option value="$PROJECT_DIR$/public/angularCtrls/api.js" />
         <option value="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
+        <option value="$PROJECT_DIR$/public/angularCtrls/api.js" />
       </list>
     </option>
   </component>
@@ -625,7 +625,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459618382753</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Ajustes">
+      <created>1459626940301</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1459626940301</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1107,14 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/usuario/templates/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.4615383">
@@ -1125,8 +1123,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8540773">
-          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        <state vertical-scroll-proportion="-18.384615">
+          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7034483">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding />
         </state>
       </provider>
