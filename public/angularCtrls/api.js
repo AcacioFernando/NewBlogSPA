@@ -5,7 +5,7 @@ angular.module('myApp', ["ngRoute", "ngSanitize", "ngCkeditor","ngFileUpload"])
         $rootScope.$on("$routeChangeStart", function() {
             hadRouteChange = true;
         });
-        function hookAngularBoomerang() {
+        function hook() {
             if (window.BOOMR && BOOMR.version) {
                 if (BOOMR.plugins && BOOMR.plugins.Angular) {
                     BOOMR.plugins.Angular.hook($rootScope, hadRouteChange);
@@ -13,15 +13,15 @@ angular.module('myApp', ["ngRoute", "ngSanitize", "ngCkeditor","ngFileUpload"])
                 return true;
             }
         }
-        if (!hookAngularBoomerang()) {
+
+        if (!hook()) {
             if (document.addEventListener) {
-                document.addEventListener("onBoomerangLoaded", hookAngularBoomerang);
-            }
-            else if (document.attachEvent) {
+                document.addEventListener("onBoomerangLoaded", hook);
+            } else if (document.attachEvent) {
                 document.attachEvent("onpropertychange", function(e) {
                     e = e || window.event;
                     if (e && e.propertyName === "onBoomerangLoaded") {
-                        hookAngularBoomerang();
+                        hook();
                     }
                 });
             }
