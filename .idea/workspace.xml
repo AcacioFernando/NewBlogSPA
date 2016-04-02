@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f61f218e-c25b-49a2-936e-9d86b3cfef35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/usuario/noticias.ejs" afterPath="$PROJECT_DIR$/views/usuario/noticias.ejs" />
+    <list default="true" id="f61f218e-c25b-49a2-936e-9d86b3cfef35" name="Default" comment="Ajustes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/boomerang.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/GUID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/auto_xhr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/backbone.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/bw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/cache-test-plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/cache_reload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/clicks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/dns.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/ember.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/ipv6.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/md5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/memory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/mobile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/navtiming.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/restiming.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/rt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/spa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/boomerang/plugins/zzz_last_plugin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/routeConfig.js" afterPath="$PROJECT_DIR$/public/angularCtrls/routeConfig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularCtrls/api.js" afterPath="$PROJECT_DIR$/public/angularCtrls/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/usuario/templates/head.ejs" afterPath="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/templates/header.ejs" afterPath="$PROJECT_DIR$/views/admin/templates/header.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/templates/head.ejs" afterPath="$PROJECT_DIR$/views/admin/templates/head.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/postCreate.ejs" afterPath="$PROJECT_DIR$/views/admin/postCreate.ejs" />
     </list>
     <ignored path="NewBlogHTTP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,51 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="responsiveslides.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/responsiveslides.min.js">
+      <file leaf-file-name="head.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticia.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/usuario/noticia.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/searchCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticiasCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiasCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="84" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routeConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularCtrls/routeConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8297568">
+              <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -83,47 +60,7 @@
         <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categoriaCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/categoriaCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticias.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/usuario/noticias.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="36" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menulateral.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/usuario/menulateral.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58441556">
-              <caret line="116" column="3" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticiaCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiaCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="96" selection-start-line="0" selection-start-column="96" selection-end-line="0" selection-end-column="96" />
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,7 +122,6 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/indexCtrl.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/public/angularCtrls/api.js" />
         <option value="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/cadastrarNoticiaCtrl.js" />
         <option value="$PROJECT_DIR$/routes/admin/index.js" />
         <option value="$PROJECT_DIR$/public/angularCtrls/administradorCtrls/deletarNoticiaCtrl.js" />
@@ -201,9 +137,10 @@
         <option value="$PROJECT_DIR$/views/admin/postCreate.ejs" />
         <option value="$PROJECT_DIR$/views/admin/templates/head.ejs" />
         <option value="$PROJECT_DIR$/views/admin/templates/header.ejs" />
-        <option value="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
         <option value="$PROJECT_DIR$/public/angularCtrls/routeConfig.js" />
         <option value="$PROJECT_DIR$/views/usuario/noticias.ejs" />
+        <option value="$PROJECT_DIR$/public/angularCtrls/api.js" />
+        <option value="$PROJECT_DIR$/views/usuario/templates/head.ejs" />
       </list>
     </option>
   </component>
@@ -217,8 +154,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="780" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -330,6 +267,10 @@
               <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usuario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -377,7 +318,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angularCtrls" />
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlogSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlogSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boomerang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlogSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlogSPA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boomerang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,10 +387,6 @@
               <option name="myItemId" value="angularCtrls" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usuarioCtrls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -415,7 +400,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="4.3.0" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NewBlogMeteor" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -423,19 +408,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\angularCtrls" />
-      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views\usuario\js\controllers" />
-      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views\usuario" />
-      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views" />
-      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\lib\Angular" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\lib\boomerang" />
       <recent name="C:\Users\acaci\WebstormProjects\NewBlogSPA\views\usuario" />
       <recent name="C:\Users\acaci\WebstormProjects\NewBlogSPA\public\lib" />
       <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\lib" />
       <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\lib\ckeditor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\lib\boomerang\plugins" />
       <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\public\angularCtrls" />
+      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views\usuario\js\controllers" />
+      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views\usuario" />
+      <recent name="C:\Users\Acacio Oliveira\WebstormProjects\NewBlogSPA\views" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin\www">
@@ -635,27 +620,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14904553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="775" y="16" width="370" height="985" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13020833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="775" y="16" width="370" height="985" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43551797" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20401691" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.434365" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20824525" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.434365" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -731,102 +716,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/usuario/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#429#539#0" expanded="false" />
-            <element signature="e#833#977#0" expanded="false" />
-            <element signature="e#1036#1183#0" expanded="false" />
-            <element signature="e#1239#1383#0" expanded="false" />
-            <element signature="e#1469#1740#0" expanded="false" />
-            <element signature="e#1793#1921#0" expanded="false" />
-            <element signature="e#1978#2282#0" expanded="false" />
-            <element signature="e#2338#2617#0" expanded="false" />
-            <element signature="e#3194#3619#0" expanded="false" />
-            <element signature="e#4581#4946#0" expanded="false" />
-            <element signature="e#5009#5386#0" expanded="false" />
-            <element signature="e#5447#5709#0" expanded="false" />
-            <element signature="e#5803#7126#0" expanded="false" />
-            <element signature="e#7232#8036#0" expanded="false" />
-            <element signature="e#8097#8369#0" expanded="false" />
-            <element signature="e#8464#10324#0" expanded="false" />
-            <element signature="e#10406#11208#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/administradorCtrls/deletarNoticiaCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="74" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/dataTables.bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.05263158">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/jasny-bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.055343512">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/ckeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lib/Angular/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/users.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lib/Angular/angular-route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/templates/footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.115385">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/lib/Angular/angular-sanitize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33280253">
-          <caret line="356" column="44" selection-start-line="356" selection-start-column="40" selection-end-line="356" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/registro.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-39.23077">
@@ -911,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -974,64 +856,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#362#589#0" expanded="false" />
-            <element signature="e#644#881#0" expanded="false" />
-            <element signature="e#934#1170#0" expanded="false" />
-            <element signature="e#1262#1532#0" expanded="false" />
-            <element signature="e#1588#1854#0" expanded="false" />
-            <element signature="e#1915#2179#0" expanded="false" />
-            <element signature="e#2261#3063#0" expanded="false" />
-            <element signature="e#3128#3813#0" expanded="false" />
-            <element signature="e#3861#3949#0" expanded="false" />
-            <element signature="e#3999#5354#0" expanded="false" />
-            <element signature="e#5400#6482#0" expanded="false" />
-            <element signature="e#6528#6637#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/usuario/categoria.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5467742">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/templates/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1112902">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usuario/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
-          <folding>
-            <element signature="e#429#539#0" expanded="false" />
-            <element signature="e#833#977#0" expanded="false" />
-            <element signature="e#1036#1183#0" expanded="false" />
-            <element signature="e#1239#1383#0" expanded="false" />
-            <element signature="e#1469#1740#0" expanded="false" />
-            <element signature="e#1793#1921#0" expanded="false" />
-            <element signature="e#1978#2282#0" expanded="false" />
-            <element signature="e#2338#2617#0" expanded="false" />
-            <element signature="e#3194#3619#0" expanded="false" />
-            <element signature="e#4581#4946#0" expanded="false" />
-            <element signature="e#5009#5386#0" expanded="false" />
-            <element signature="e#5447#5709#0" expanded="false" />
-            <element signature="e#5803#7126#0" expanded="false" />
-            <element signature="e#7232#8036#0" expanded="false" />
-            <element signature="e#8097#8369#0" expanded="false" />
-            <element signature="e#8464#10324#0" expanded="false" />
-            <element signature="e#10406#11208#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1063,17 +891,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.653846">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/responsiveslides.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiaCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="96" selection-start-line="0" selection-start-column="96" selection-end-line="0" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiasCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="84" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/usuario/menulateral.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/usuario/noticias.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1086,11 +936,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiaCtrl.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="96" selection-start-line="0" selection-start-column="96" selection-end-line="0" selection-end-column="96" />
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/usuario/templates/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#362#589#0" expanded="false" />
+            <element signature="e#644#881#0" expanded="false" />
+            <element signature="e#934#1170#0" expanded="false" />
+            <element signature="e#1262#1532#0" expanded="false" />
+            <element signature="e#1588#1854#0" expanded="false" />
+            <element signature="e#1915#2179#0" expanded="false" />
+            <element signature="e#2261#3063#0" expanded="false" />
+            <element signature="e#3128#3813#0" expanded="false" />
+            <element signature="e#3861#3949#0" expanded="false" />
+            <element signature="e#3999#5354#0" expanded="false" />
+            <element signature="e#5400#6482#0" expanded="false" />
+            <element signature="e#6528#6637#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,18 +981,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/routeConfig.js">
+    <entry file="file://$PROJECT_DIR$/routes/usuario/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <caret line="158" column="6" selection-start-line="158" selection-start-column="6" selection-end-line="158" selection-end-column="49" />
+          <folding>
+            <element signature="e#429#539#0" expanded="false" />
+            <element signature="e#833#977#0" expanded="false" />
+            <element signature="e#1036#1183#0" expanded="false" />
+            <element signature="e#1239#1383#0" expanded="false" />
+            <element signature="e#1469#1740#0" expanded="false" />
+            <element signature="e#1793#1921#0" expanded="false" />
+            <element signature="e#1978#2282#0" expanded="false" />
+            <element signature="e#2338#2617#0" expanded="false" />
+            <element signature="e#3194#3619#0" expanded="false" />
+            <element signature="e#4581#4946#0" expanded="false" />
+            <element signature="e#5009#5386#0" expanded="false" />
+            <element signature="e#5447#5709#0" expanded="false" />
+            <element signature="e#5803#7126#0" expanded="false" />
+            <element signature="e#7232#8036#0" expanded="false" />
+            <element signature="e#8097#8369#0" expanded="false" />
+            <element signature="e#8464#10324#0" expanded="false" />
+            <element signature="e#10406#11208#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
+    <entry file="file://$PROJECT_DIR$/public/angularCtrls/routeConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1121,31 +1018,111 @@
     <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/categoriaCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="35" />
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angularCtrls/usuarioCtrls/noticiasCtrl.js">
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/boomerang.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="84" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/noticias.ejs">
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/dns.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="36" selection-end-column="37" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/usuario/menulateral.ejs">
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/ember.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58441556">
-          <caret line="116" column="3" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/GUID.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/ipv6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/md5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/memory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/navtiming.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/boomerang/plugins/restiming.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angularCtrls/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/usuario/templates/head.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8297568">
+          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
           <folding />
         </state>
       </provider>
