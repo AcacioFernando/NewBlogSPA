@@ -1,5 +1,5 @@
 angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $routeParams, $sce ) {
-    $scope.app = "Lista Telefonica";
+
     $scope.noticia;
     $scope.comentarios = [];
     $scope.conteudo = "";

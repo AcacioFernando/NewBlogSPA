@@ -71,12 +71,16 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$loca
     
     $scope.gosteiNoticia= function (idNoticia) {
         var noticias = $scope.noticias;
+
+        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+
         $http.get("/gosteinoticia/"+idNoticia).success(function () {
 
             $scope.noticias = noticias.filter(function (noticia) {
                 if (noticia._id == idNoticia ) {
                     noticia.gostei = noticia.gostei + 1;
                 }
+                BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
                 return noticia;
             });
 
