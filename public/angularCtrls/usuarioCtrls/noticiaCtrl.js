@@ -12,6 +12,8 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
             $scope.noticia = data;
             $scope.conteudo = data.content;
             $scope.comentarios = data.comments;
+
+            BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });
@@ -23,10 +25,15 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
     }
 
     $scope.submitComentario = function () {
+        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
         console.log($scope.comentario);
         $http.post('/submitcomentario/'+ $scope.noticia._id, $scope.comentario).success(function (data) {
             console.log("posted successfully");
             $scope.comentarios = data;
+            if (timer) {
+                var tempo= timer.loaded();
+                console.log(tempo)
+            }
         }).error(function (data) {
             console.error("error in posting");
         });
@@ -36,8 +43,15 @@ angular.module("myApp").controller("noticiaCtrl", function ($scope, $http, $rout
 
     $scope.gosteiNoticia = function (idNoticia) {
         console.log("id: " + idNoticia);
+        if (typeof BOOMR !== "undefined") {
+            var timer = BOOMR.requestStart("some-tag-name");
+        }
         $http.get("/gosteinoticia/" + idNoticia).success(function () {
             $scope.noticia.gostei = $scope.noticia.gostei + 1;
+            if (timer) {
+               var tempo= timer.loaded();
+                console.log(tempo)
+            }
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });

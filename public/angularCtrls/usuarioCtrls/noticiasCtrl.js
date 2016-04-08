@@ -1,16 +1,16 @@
-angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$location) {
+angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $location, $window) {
     $scope.app = "Lista Telefonica";
     $scope.noticias = [];
     $scope.noticiasMaisLidas = [];
     $scope.noticiasBanner = [];
-    $scope.categorias =[];
-    $scope.comentarios =[];
-    $scope.criterioDeBusca ="";
+    $scope.categorias = [];
+    $scope.comentarios = [];
+    $scope.criterioDeBusca = "";
     $scope.usuario = "";
 
     var carregarUsuario = function () {
         $http.get("/buscarusuario").success(function (data) {
-            console.log("Entrei aqui 1: " +data);
+            console.log("Entrei aqui 1: " + data);
             $scope.usuario = data;
             console.log($scope.usuario);
         }).error(function (data, status) {
@@ -36,7 +36,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$loca
         });
     };
 
-    var carregarCategorias= function () {
+    var carregarCategorias = function () {
         $http.get("/buscarcategorias").success(function (data) {
             $scope.categorias = data;
         }).error(function (data, status) {
@@ -44,13 +44,14 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$loca
         });
     };
 
-    $scope.buscarNoticias = function (criterioDeBusca) {
-        console.log(criterioDeBusca);
-        $location.url('/search/'+criterioDeBusca);
+    $scope.startEvent = function (criterioDeBusca) {
+
+        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+        $window.location.href ='/noticia/' + criterioDeBusca;
     };
 
     $scope.buscarNoticia = function (idNoticia) {
-        $http.get("/buscarnoticia/"+idNoticia).success(function (data) {
+        $http.get("/buscarnoticia/" + idNoticia).success(function (data) {
             $scope.noticias = data;
             $scope.comentarios = data.comments;
             $scope.noticiasBanner = [];
@@ -61,23 +62,28 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$loca
     };
 
     $scope.buscarCategoria = function (categoria) {
-        $http.get("/buscarcategoria/"+categoria).success(function (data) {
+        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+
+        $http.get("/buscarcategoria/" + categoria).success(function (data) {
             $scope.noticias = data;
             $scope.noticiasBanner = data.slice(-3);
+
+            BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
+
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });
     };
-    
-    $scope.gosteiNoticia= function (idNoticia) {
-        var noticias = $scope.noticias;
+
+    $scope.gosteiNoticia = function (idNoticia) {
 
         BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
 
-        $http.get("/gosteinoticia/"+idNoticia).success(function () {
+        var noticias = $scope.noticias;
+        $http.get("/gosteinoticia/" + idNoticia).success(function () {
 
             $scope.noticias = noticias.filter(function (noticia) {
-                if (noticia._id == idNoticia ) {
+                if (noticia._id == idNoticia) {
                     noticia.gostei = noticia.gostei + 1;
                 }
                 BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
@@ -89,15 +95,20 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http,$loca
         });
     };
 
-    $scope.naoGosteiNoticia= function (idNoticia) {
+    $scope.naoGosteiNoticia = function (idNoticia) {
+
+        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+
         var noticias = $scope.noticias;
 
-        $http.get("/naogosteinoticia/"+idNoticia).success(function () {
+        $http.get("/naogosteinoticia/" + idNoticia).success(function () {
 
             $scope.noticias = noticias.filter(function (noticia) {
-                if (noticia._id == idNoticia ) {
+                if (noticia._id == idNoticia) {
                     noticia.nao_gostei = noticia.nao_gostei + 1;
                 }
+                BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
+
                 return noticia;
             });
 

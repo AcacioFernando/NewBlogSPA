@@ -46,10 +46,10 @@
     atatus.config('c4047513e4b44cfbb474889f5e4faf70').install();
 </script>-->
 
-<<script src= "/lib/boomerang/boomerang.js" ></script>
-<script src= "/lib/boomerang/plugins/rt.js" ></script>
-<script src= "/lib/boomerang/plugins/navtiming.js" ></script>
-<script src= "/lib/boomerang/plugins/angular.js" ></script>
+<script src="/lib/boomerang/boomerang.js"></script>
+<script src="/lib/boomerang/plugins/rt.js"></script>
+<script src="/lib/boomerang/plugins/navtiming.js"></script>
+<script src="/lib/boomerang/plugins/angular.js"></script>
 
 <script>
 
@@ -74,6 +74,10 @@
         "Backbone": {
             "enabled": false
         }
+    });
+
+    BOOMR.subscribe('before_beacon', function (o) {
+        console.log(o);
     });
 
 

@@ -9,6 +9,7 @@ angular.module("myApp").config(function ($routeProvider, $locationProvider) {
             })
             // route for the about page
             .when('/noticia/:value', {
+
                 templateUrl: '/views/noticia',
                 controller: 'noticiaCtrl'
             })
