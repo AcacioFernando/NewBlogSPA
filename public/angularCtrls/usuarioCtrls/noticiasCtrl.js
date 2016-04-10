@@ -46,7 +46,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
 
     $scope.startEvent = function (criterioDeBusca) {
 
-        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+        //BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
         $window.location.href ='/noticia/' + criterioDeBusca;
     };
 
@@ -77,7 +77,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
 
     $scope.gosteiNoticia = function (idNoticia) {
 
-        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+       // BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
 
         var noticias = $scope.noticias;
         $http.get("/gosteinoticia/" + idNoticia).success(function () {
@@ -86,7 +86,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
                 if (noticia._id == idNoticia) {
                     noticia.gostei = noticia.gostei + 1;
                 }
-                BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
+              //  BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
                 return noticia;
             });
 
@@ -97,7 +97,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
 
     $scope.naoGosteiNoticia = function (idNoticia) {
 
-        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+       // BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
 
         var noticias = $scope.noticias;
 
@@ -107,7 +107,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
                 if (noticia._id == idNoticia) {
                     noticia.nao_gostei = noticia.nao_gostei + 1;
                 }
-                BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
+               // BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
 
                 return noticia;
             });
