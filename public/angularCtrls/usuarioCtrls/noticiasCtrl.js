@@ -45,8 +45,7 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
     };
 
     $scope.startEvent = function (criterioDeBusca) {
-
-        //BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
+        startTime();
         $window.location.href ='/noticia/' + criterioDeBusca;
     };
 
@@ -62,34 +61,25 @@ angular.module("myApp").controller("noticiasCtrl", function ($scope, $http, $loc
     };
 
     $scope.buscarCategoria = function (categoria) {
-        BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
-
         $http.get("/buscarcategoria/" + categoria).success(function (data) {
             $scope.noticias = data;
             $scope.noticiasBanner = data.slice(-3);
-
-            BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
-
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });
     };
 
     $scope.gosteiNoticia = function (idNoticia) {
-
-       // BOOMR.plugins.RT.startTimer("t_done");	// Start measuring download time
-
+        startTime();
         var noticias = $scope.noticias;
         $http.get("/gosteinoticia/" + idNoticia).success(function () {
-
             $scope.noticias = noticias.filter(function (noticia) {
                 if (noticia._id == idNoticia) {
                     noticia.gostei = noticia.gostei + 1;
+                    endTime();
                 }
-              //  BOOMR.plugins.RT.done();	// Tell boomerang to measure time and fire a beacon
                 return noticia;
             });
-
         }).error(function (data, status) {
             $scope.message = "Aconteceu um problema: " + data;
         });

@@ -38,6 +38,22 @@
 <script src="/lib/ng-file-upload/ng-file-upload-shim.min.js"></script>
 <script src="/lib/ng-file-upload-shim/ng-file-upload.min.js"></script>
 
+
+    <script type="text/javascript">
+        var t0;
+        var t1;
+
+        function startTime() {
+            t0 = performance.now();
+        }
+        function endTime() {
+            t1 = performance.now();
+            var tempo = t1-t0;
+            console.log("Tempo de execução: " + tempo);
+        }
+
+    </script>
+
 <!--
 <script src="//dmc1acwvwny3.cloudfront.net/atatus.js"> </script>
 <script type="text/javascript"> atatus.config('c4047513e4b44cfbb474889f5e4faf70').install(); </script>
