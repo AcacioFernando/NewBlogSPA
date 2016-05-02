@@ -65,7 +65,7 @@
                             </div><!-- /.info-box-content -->
                         </div>
 
-                        <h3><a href ng-click="startEvent(noticia._id)">{{noticia.title}}</a></h3>
+                        <h3><a class="mylink" href='/noticia/{{noticia._id}}'>{{noticia.title}}</a></h3>
                         <p>{{noticia.sub_title}}</p>
                         <div class="comments cmnt3">
                             <ul>
@@ -134,3 +134,11 @@
     <!-- Fim Post 1 -->
 
 </div>
+
+<script type="text/javascript">
+
+    $(document).on("click",".mylink",function(){
+        startTime();
+    });
+
+</script>
