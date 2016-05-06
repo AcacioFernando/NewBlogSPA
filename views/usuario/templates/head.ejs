@@ -52,6 +52,14 @@
             console.log("Tempo de execução: " + tempo);
         }
 
+
+        $(document).keypress(function(e) {
+            if(e.which == 109){
+                startTime();
+                window.history.back();
+            }
+
+        });
     </script>
 
 <!--
